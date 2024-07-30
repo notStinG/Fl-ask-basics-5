@@ -1,0 +1,20 @@
+* {
+  background: linear-gradient(to, #f5f5f5, #ffaaff);
+  color: black;
+  font-family: Segoe UI;
+}
+
+h1 {
+  background: teal;
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  background: orange;
+}
+
+.result_name {
+  background: teal;
+  color: white;
+}
