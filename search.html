@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Staff Search</title>
+	<link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
+</head>
+<body>
+	<h1>
+		Anderson Serangoon Junior College
+		<br>
+		Find Teaching Staff
+	</h1>
+	<form>
+		<label for="staff_name">Enter Staff Name: </label>
+		<input type="text" name="staff_name"><br><br>
+		<label for="department">Enter Department: </label>
+		<input type="text" name="department">
+		<br><br>
+		<input type="submit" value="Search!">
+	</form>
+	<hr>
+	{% if results %}
+	<h2>Staff Details (Found: {{ results | length }}):</h2>
+      {% for staff in results %}
+		<p><b>Name: <span class="result_name">{{ staff["name"] }}</span></b></p>
+		<p><b>Department:</b> {{ staff["dept"] }}</p>
+		<p><b>Designation:</b> {{ staff["designation"] }}</p>
+		<p><b>Teaching Subject:</b> {{ staff["teaching_subjects"] }}</p>
+        <p><b>CCA:</b> {{ staff["cca"] }}</p>
+		<hr>
+      {% endfor %}
+	{% else %}
+		<p>There are no teachers to be displayed.</p>
+	{% endif %}
+
+</body>
+</html>
